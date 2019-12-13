@@ -10,13 +10,13 @@ end note
 palvelin->selain: response header 302 Found, redirect to /notes
 
 selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
-palvelin-->selain: 304 Not Modified, HTML-koodi
+palvelin-->selain: 200 OK Modified, HTML-koodi
 
 selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
-palvelin-->selain: 304 Not Modified, main.css
+palvelin-->selain: 200 OK Modified, main.css
 
 selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.js
-palvelin-->selain: 304 Not Modified, main.js
+palvelin-->selain: 200 OK Modified, main.js
 
 note left of selain:
 selain alkaa suoritttaa js-koodia
