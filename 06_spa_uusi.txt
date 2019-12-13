@@ -1,0 +1,14 @@
+title muistiinpano_spa
+
+note left of selain:
+selain suorittaa event handlerin, estää default käyttäytymisen, luo uuden muistiinpanon, 
+renderöi sivun ja lähettää uuden muistiinpanon POST requestillä
+end note
+
+selain->palvelin: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+
+note right of palvelin:
+palvelin kuittaa 201 koodilla uuden musitiinpanon ja päivittää listansa
+end note
+
+palvelin-->selain: HTTP 201 Created

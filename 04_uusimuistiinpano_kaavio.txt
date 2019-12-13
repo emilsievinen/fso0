@@ -7,7 +7,7 @@ palvelin lukee POST-pyynnöllä lähetetyn uuden muistiinpanon, ja lisää sen d
 Sen jälkeen vastaa response header HTTP 302, redirectaa /notes osoitteeseen.
 end note
 
-palvelin->selain: response header 302 Found, redirect to /notes
+palvelin-->selain: response header 302 Found, redirect to /notes
 
 selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
 palvelin-->selain: 200 OK Modified, HTML-koodi
