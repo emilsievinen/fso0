@@ -1,0 +1,31 @@
+title muistiinpano
+
+selain->palvelin: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note
+
+note right of palvelin:
+palvelin lukee POST-pyynnöllä lähetetyn uuden muistiinpanon, ja lisää sen data.json tiedostoon.
+Sen jälkeen vastaa response header HTTP 302, redirectaa /notes osoitteeseen.
+end note
+
+palvelin->selain: response header 302 Found, redirect to /notes
+
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+palvelin-->selain: 304 Not Modified, HTML-koodi
+
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+palvelin-->selain: 304 Not Modified, main.css
+
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.js
+palvelin-->selain: 304 Not Modified, main.js
+
+note left of selain:
+selain alkaa suoritttaa js-koodia
+end note
+
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+palvelin-->selain: 200 OK, data.json [{ content: "HTML on helppoa", date: "2019-01-01" }, ...]
+
+note left of selain:
+selain suorittaa tapahtumankäsittelijän
+joka renderöi muistiinpanot näytölle
+end note
